@@ -182,6 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PruebaController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -202,22 +203,12 @@
     <Compile Include="Models\Mapping\PedidoMap.cs" />
     <Compile Include="Models\Mapping\ProductoMap.cs" />
     <Compile Include="Models\Mapping\SubCategoriaMap.cs" />
-    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
     <Compile Include="Models\Mapping\TipoEntregaMap.cs" />
-    <Compile Include="Models\Mapping\UserProfileMap.cs" />
-    <Compile Include="Models\Mapping\webpages_MembershipMap.cs" />
-    <Compile Include="Models\Mapping\webpages_OAuthMembershipMap.cs" />
-    <Compile Include="Models\Mapping\webpages_RolesMap.cs" />
     <Compile Include="Models\Negocio.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\SubCategoria.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\TipoEntrega.cs" />
-    <Compile Include="Models\UserProfile.cs" />
-    <Compile Include="Models\webpages_Membership.cs" />
-    <Compile Include="Models\webpages_OAuthMembership.cs" />
-    <Compile Include="Models\webpages_Roles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +324,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Prueba\Index.cshtml" />
     <Content Include="Views\Prueba\Test.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Categoria\Details.cshtml" />
+    <Content Include="Views\Categoria\Create.cshtml" />
+    <Content Include="Views\Categoria\Edit.cshtml" />
+    <Content Include="Views\Categoria\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

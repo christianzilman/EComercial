@@ -24,12 +24,7 @@ namespace EComercial.Models
         public DbSet<Pedido> Pedidoes { get; set; }
         public DbSet<Producto> Productoes { get; set; }
         public DbSet<SubCategoria> SubCategorias { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<TipoEntrega> TipoEntregas { get; set; }
-        public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<webpages_Membership> webpages_Membership { get; set; }
-        public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
-        public DbSet<webpages_Roles> webpages_Roles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -40,13 +35,7 @@ namespace EComercial.Models
             modelBuilder.Configurations.Add(new NegocioMap());
             modelBuilder.Configurations.Add(new PedidoMap());
             modelBuilder.Configurations.Add(new ProductoMap());
-            modelBuilder.Configurations.Add(new SubCategoriaMap());
-            modelBuilder.Configurations.Add(new sysdiagramMap());
-            modelBuilder.Configurations.Add(new TipoEntregaMap());
-            modelBuilder.Configurations.Add(new UserProfileMap());
-            modelBuilder.Configurations.Add(new webpages_MembershipMap());
-            modelBuilder.Configurations.Add(new webpages_OAuthMembershipMap());
-            modelBuilder.Configurations.Add(new webpages_RolesMap());
+            modelBuilder.Configurations.Add(new SubCategoriaMap());            
         }
     }
 }
