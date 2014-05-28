@@ -15,8 +15,10 @@ namespace EComercial.Models
         public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<double> Total { get; set; }
         public int CompradorId { get; set; }
+        public Nullable<int> EstadoId { get; set; }
         public virtual Comprador Comprador { get; set; }
         public virtual ICollection<DetallePedido> DetallePedidoes { get; set; }
+        public virtual Estado Estado { get; set; }
         public virtual ICollection<FormaEntrega> FormaEntregas { get; set; }
     }
 }

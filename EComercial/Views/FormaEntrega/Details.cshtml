@@ -1,0 +1,36 @@
+﻿@model EComercial.Models.FormaEntrega
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FormaEntrega</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoEntrega.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoEntrega.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Costo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Costo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pedido.PedidoId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pedido.PedidoId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FormaEntregaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -7,13 +7,13 @@ namespace EComercial.Models
     {
         public SubCategoria()
         {
-            this.Productoes = new List<Producto>();
+            this.Items = new List<Item>();
         }
 
         public int SubCategoriaId { get; set; }
         public string Nombre { get; set; }
         public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
-        public virtual ICollection<Producto> Productoes { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

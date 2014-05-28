@@ -1,0 +1,64 @@
+﻿@model EComercial.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Producto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrecioCompra)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrecioCompra)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cantidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cantidad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FechaActualizacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaActualizacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Item.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Item.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Negocio.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Negocio.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrecioVenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrecioVenta)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

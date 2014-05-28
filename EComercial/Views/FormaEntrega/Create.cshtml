@@ -1,0 +1,52 @@
+﻿@model EComercial.Models.FormaEntrega
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>FormaEntrega</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoEntregaId, "TipoEntrega")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TipoEntregaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TipoEntregaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Costo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Costo)
+            @Html.ValidationMessageFor(model => model.Costo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PedidoId, "Pedido")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PedidoId", String.Empty)
+            @Html.ValidationMessageFor(model => model.PedidoId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

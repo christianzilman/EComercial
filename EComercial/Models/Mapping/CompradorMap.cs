@@ -33,6 +33,7 @@ namespace EComercial.Models.Mapping
             this.Property(t => t.Apellido).HasColumnName("Apellido");
             this.Property(t => t.Email).HasColumnName("Email");
             this.Property(t => t.Telefono).HasColumnName("Telefono");
+            this.Property(t => t.UserId).HasColumnName("UserId");
             this.Property(t => t.Direccion).HasColumnName("Direccion");
         }
     }

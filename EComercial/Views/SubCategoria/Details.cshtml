@@ -1,0 +1,29 @@
+﻿@model EComercial.Models.SubCategoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SubCategoria</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria.Nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SubCategoriaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

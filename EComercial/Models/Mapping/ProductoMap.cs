@@ -26,17 +26,18 @@ namespace EComercial.Models.Mapping
             this.Property(t => t.Cantidad).HasColumnName("Cantidad");
             this.Property(t => t.FechaActualizacion).HasColumnName("FechaActualizacion");
             this.Property(t => t.Imagen).HasColumnName("Imagen");
-            this.Property(t => t.SubCategoriaId).HasColumnName("SubCategoriaId");
+            this.Property(t => t.ItemId).HasColumnName("ItemId");
             this.Property(t => t.NegocioId).HasColumnName("NegocioId");
             this.Property(t => t.PrecioVenta).HasColumnName("PrecioVenta");
+            this.Property(t => t.Destacado).HasColumnName("Destacado");
 
             // Relationships
+            this.HasRequired(t => t.Item)
+                .WithMany(t => t.Productoes)
+                .HasForeignKey(d => d.ItemId);
             this.HasOptional(t => t.Negocio)
                 .WithMany(t => t.Productoes)
                 .HasForeignKey(d => d.NegocioId);
-            this.HasRequired(t => t.SubCategoria)
-                .WithMany(t => t.Productoes)
-                .HasForeignKey(d => d.SubCategoriaId);
 
         }
     }

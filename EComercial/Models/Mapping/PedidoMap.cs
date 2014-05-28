@@ -17,11 +17,15 @@ namespace EComercial.Models.Mapping
             this.Property(t => t.Fecha).HasColumnName("Fecha");
             this.Property(t => t.Total).HasColumnName("Total");
             this.Property(t => t.CompradorId).HasColumnName("CompradorId");
+            this.Property(t => t.EstadoId).HasColumnName("EstadoId");
 
             // Relationships
             this.HasRequired(t => t.Comprador)
                 .WithMany(t => t.Pedidoes)
                 .HasForeignKey(d => d.CompradorId);
+            this.HasOptional(t => t.Estado)
+                .WithMany(t => t.Pedidoes)
+                .HasForeignKey(d => d.EstadoId);
 
         }
     }
