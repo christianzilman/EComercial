@@ -60,23 +60,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Bootstrap theme</a>
+                <a class="navbar-brand" href="#">E-Comercial</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="active"><a href="#">Inicio</a></li>
+                    <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+                    <li>@Html.ActionLink("Clientes", "Index", "Comprador")</li>
+                    <li>@Html.ActionLink("Negocios", "Index", "Negocio")</li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li>@Html.ActionLink("Categorias", "Index", "Categoria")</li>
+                            <li>@Html.ActionLink("SubCategorias", "Index", "SubCategoria")</li>
+                            <li>@Html.ActionLink("Items", "Index", "Item")</li>
                         </ul>
                     </li>
                 </ul>
@@ -92,11 +89,12 @@
                 </section>
             </div>
         </div>
-        </div> <!-- /container -->
+        </div> <!-- /container -->    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    @Scripts.Render("~/bundles/jquery")
+    
+    <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Content/bootstrap-3.1.1/js/bootstrap.js"></script>
     @RenderSection("scripts", required: false)
 </body>

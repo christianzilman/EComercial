@@ -1269,7 +1269,7 @@ jQuery.support = (function() {
 
 	// Preliminary tests
 	div.setAttribute( "className", "t" );
-	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
+	div.innerHTML = "  <link/><table class = "table-striped"></table><a href='/a'>a</a><input type='checkbox'/>";
 
 	all = div.getElementsByTagName("*");
 	a = div.getElementsByTagName("a")[ 0 ];
@@ -1450,7 +1450,7 @@ jQuery.support = (function() {
 		// display:none (it is still safe to use offsets if a parent element is
 		// hidden; don safety goggles and see bug #4512 for more information).
 		// (only IE 8 fails this test)
-		div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
+		div.innerHTML = "<table class = "table-striped"><tr><td></td><td>t</td></tr></table>";
 		tds = div.getElementsByTagName("td");
 		tds[ 0 ].style.cssText = "padding:0;margin:0;border:0;display:none";
 		isSupported = ( tds[ 0 ].offsetHeight === 0 );
@@ -5680,10 +5680,10 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
 	wrapMap = {
 		option: [ 1, "<select multiple='multiple'>", "</select>" ],
 		legend: [ 1, "<fieldset>", "</fieldset>" ],
-		thead: [ 1, "<table>", "</table>" ],
-		tr: [ 2, "<table><tbody>", "</tbody></table>" ],
-		td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
-		col: [ 2, "<table><tbody></tbody><colgroup>", "</colgroup></table>" ],
+		thead: [ 1, "<table class = "table-striped">", "</table>" ],
+		tr: [ 2, "<table class = "table-striped"><tbody>", "</tbody></table>" ],
+		td: [ 3, "<table class = "table-striped"><tbody><tr>", "</tr></tbody></table>" ],
+		col: [ 2, "<table class = "table-striped"><tbody></tbody><colgroup>", "</colgroup></table>" ],
 		area: [ 1, "<map>", "</map>" ],
 		_default: [ 0, "", "" ]
 	},
@@ -6333,13 +6333,13 @@ jQuery.extend({
 					// Remove IE's autoinserted <tbody> from table fragments
 					if ( !jQuery.support.tbody ) {
 
-						// String was a <table>, *may* have spurious <tbody>
+						// String was a <table class = "table-striped">, *may* have spurious <tbody>
 						hasBody = rtbody.test(elem);
 							tbody = tag === "table" && !hasBody ?
 								div.firstChild && div.firstChild.childNodes :
 
 								// String was a bare <thead> or <tfoot>
-								wrap[1] === "<table>" && !hasBody ?
+								wrap[1] === "<table class = "table-striped">" && !hasBody ?
 									div.childNodes :
 									[];
 

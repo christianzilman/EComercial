@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<EComercial.Models.FormaEntrega>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Forma de Entrega";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
-<table>
+<table class = "table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TipoEntrega.Nombre)
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.Pedido.PedidoId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FormaEntregaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FormaEntregaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FormaEntregaId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.FormaEntregaId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.FormaEntregaId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.FormaEntregaId })
         </td>
     </tr>
 }

@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<EComercial.Models.SubCategoria>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SubCateogias";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
-<table>
+<table class = "table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Categoria.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SubCategoriaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SubCategoriaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SubCategoriaId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.SubCategoriaId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.SubCategoriaId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.SubCategoriaId })
         </td>
     </tr>
 }

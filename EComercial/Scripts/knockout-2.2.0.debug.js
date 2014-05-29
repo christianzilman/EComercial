@@ -695,9 +695,9 @@ ko.exportSymbol('utils.domNodeDisposal.removeDisposeCallback', ko.utils.domNodeD
         var tags = ko.utils.stringTrim(html).toLowerCase(), div = document.createElement("div");
 
         // Finds the first match from the left column, and returns the corresponding "wrap" data from the right column
-        var wrap = tags.match(/^<(thead|tbody|tfoot)/)              && [1, "<table>", "</table>"] ||
-                   !tags.indexOf("<tr")                             && [2, "<table><tbody>", "</tbody></table>"] ||
-                   (!tags.indexOf("<td") || !tags.indexOf("<th"))   && [3, "<table><tbody><tr>", "</tr></tbody></table>"] ||
+        var wrap = tags.match(/^<(thead|tbody|tfoot)/)              && [1, "<table class = "table-striped">", "</table>"] ||
+                   !tags.indexOf("<tr")                             && [2, "<table class = "table-striped"><tbody>", "</tbody></table>"] ||
+                   (!tags.indexOf("<td") || !tags.indexOf("<th"))   && [3, "<table class = "table-striped"><tbody><tr>", "</tr></tbody></table>"] ||
                    /* anything else */                                 [0, "", ""];
 
         // Go to html and back, then peel off extra wrappers

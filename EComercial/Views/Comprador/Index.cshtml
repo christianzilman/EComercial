@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<EComercial.Models.Comprador>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Clientes";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
-<table>
+<table class = "table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Direccion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CompradorId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CompradorId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CompradorId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.CompradorId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.CompradorId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.CompradorId })
         </td>
     </tr>
 }
