@@ -18,8 +18,8 @@ namespace EComercial.Models
         [Required(ErrorMessage = "Debe Ingresar la Dirección")]
         public string Direccion { get; set; }
          [Required(ErrorMessage = "Debe Ingresar el CUIT")]
-         /*[RegularExpression(@"/^\d{2}\-\d{8}\-\d{1}$/",
-             ErrorMessage = "CUIT INVÁLIDO")]*/
+         [RegularExpression(@"\d{2}-\d{7}-\d",
+             ErrorMessage = "CUIT INVÁLIDO")]
         public string Cuit { get; set; }
         public virtual ICollection<Producto> Productoes { get; set; }
     }
