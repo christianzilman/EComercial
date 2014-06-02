@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EComercial.Models
 {
@@ -11,6 +12,7 @@ namespace EComercial.Models
         }
 
         public int ItemId { get; set; }
+        [Required(ErrorMessage = "Debe Ingresar el Nombre")]
         public string Nombre { get; set; }
         public int SubCategoriaId { get; set; }
         public virtual SubCategoria SubCategoria { get; set; }
