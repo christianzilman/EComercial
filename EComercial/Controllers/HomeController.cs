@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EComercial.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +9,13 @@ namespace EComercial.Controllers
 {
     public class HomeController : Controller
     {
+        private EComercialContext db = new EComercialContext();
         public ActionResult Index()
         {
             ViewBag.Message = "";
-
-            return View();
-        }
+            
+            return View(db.Categorias.ToList());
+                    }
 
         public ActionResult About()
         {
@@ -28,5 +30,14 @@ namespace EComercial.Controllers
 
             return View();
         }
+
+        public ActionResult QR(FormCollection form)
+        {
+
+            var pagina = form["txtPagina"];
+            ViewBag.Pagina = pagina;
+            return View();
+        }
+
     }
 }
