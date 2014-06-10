@@ -21,6 +21,11 @@ namespace EComercial.Controllers
             return View(db.Categorias.ToList());
         }
 
+
+        public ActionResult Menu() 
+        {
+            return View();
+        }
         //
         // GET: /Categoria/Details/5
 

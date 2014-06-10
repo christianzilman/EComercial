@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EComercial.Models.Carro>
+
+@{
+    ViewBag.Title = "Pedidos";
+}
+
+<h2>Listado de Pedido</h2>
+<br/>
+<form id="formCarro" action="@Url.Content("~/Carro/Update")" method="post">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <img src="~/Images/heroAccent.png" />
+            <input type="hidden" id="ProductoId" name="ProductoId" value="@item.ProductoId" />
+            @Html.DisplayFor(modelItem => item.Producto.Nombre)
+            @Html.DisplayFor(modelItem => item.Precio)
+            <input id="Cantidad" name="Cantidad" value="@item.Cantidad" />
+            @Html.DisplayFor(modelItem => item.SubTotal)
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </div>
+    }
+    <br /><br /><br />
+    <div class="col-md-12">
+        <input id="update" name="update" type="submit" value="Actulizar"/>
+        <input id="confirmate" name="confirmate" type="submit" value="Confirmar"/>
+        @*<button id="update" onclick="Actualizar();">Actualizar</button>
+        <button id="confirmate" onclick="Confirmar();">Confirmar</button>*@
+    </div>
+</form>

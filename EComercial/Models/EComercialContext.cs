@@ -29,6 +29,8 @@ namespace EComercial.Models
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<TipoEntrega> TipoEntregas { get; set; }
 
+        public DbSet<Carro> Carros { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new CategoriaMap());
@@ -43,6 +45,7 @@ namespace EComercial.Models
             modelBuilder.Configurations.Add(new SubCategoriaMap());
             modelBuilder.Configurations.Add(new sysdiagramMap());
             modelBuilder.Configurations.Add(new TipoEntregaMap());
+            modelBuilder.Configurations.Add(new CarroMap());
         }
     }
 }
