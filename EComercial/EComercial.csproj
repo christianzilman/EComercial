@@ -39,6 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>QR\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.0.3541.23206, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>QR\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -113,6 +121,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4058.19167, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>QR\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -192,6 +204,7 @@
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\PruebaController.cs" />
+    <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SubCategoriaController.cs" />
     <Compile Include="Controllers\TipoEntregaController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -223,6 +236,7 @@
     <Compile Include="Models\Negocio.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\QR.cs" />
     <Compile Include="Models\SubCategoria.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\TipoEntrega.cs" />
@@ -298,6 +312,9 @@
     <Content Include="Content\bootstrap-3.1.1\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap-3.1.1\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="QR\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="QR\MessagingToolkit.QRCode.dll" />
+    <Content Include="QR\ThoughtWorks.QRCode.dll" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -404,6 +421,7 @@
     <Content Include="Views\Carro\Index.cshtml" />
     <Content Include="Views\Carro\Carro.cshtml" />
     <Content Include="Views\Categoria\Menu.cshtml" />
+    <Content Include="Views\Home\QR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
