@@ -14,9 +14,9 @@ namespace EComercial.Models.Mapping
             this.Property(t => t.Nombre)
                 .HasMaxLength(250);
 
-            this.Property(t => t.Imagen)
-                .IsFixedLength()
-                .HasMaxLength(8000);
+            //this.Property(t => t.Imagen)
+            //    .IsFixedLength()
+            //    .HasMaxLength(7900);
 
             // Table & Column Mappings
             this.ToTable("Producto");

@@ -54,6 +54,7 @@ namespace EComercial.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Productoes.Add(producto);
                 db.SaveChanges();
                 return RedirectToAction("Index");

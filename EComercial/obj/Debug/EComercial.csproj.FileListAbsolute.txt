@@ -200,3 +200,6 @@ C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EC
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\obj\Debug\EComercial.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\obj\Debug\EComercial.dll
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\obj\Debug\EComercial.pdb
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\Gma.QrCodeNet.Encoding.dll
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\MessagingToolkit.QRCode.dll
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\ThoughtWorks.QRCode.dll
