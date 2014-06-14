@@ -12,11 +12,19 @@
     </div>
     <div class="panel-body">
         <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    Buscar productos: @Html.TextBox("SearchString")
+                    <input type="submit" class="btn-primary" value="Buscar!" />
+                </div>
+            }
             <table class="table">
                 <thead>
                     <tr class="info">
                         <th>
-                            @Html.DisplayNameFor(model => model.Nombre)
+                            @Html.ActionLink("Descripción", "Index", new { sortOrder = ViewBag.NameSortParm })
+                            @*@Html.DisplayNameFor(model => model.Nombre)*@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.PrecioCompra)
@@ -34,7 +42,8 @@
                             @Html.DisplayNameFor(model => model.Negocio.Nombre)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.PrecioVenta)
+                           <b> @Html.ActionLink("Precio de Venta", "Index", new { sortOrder = ViewBag.PriceSortParm })</b>
+                            @*@Html.DisplayNameFor(model => model.PrecioVenta)*@
                         </th>
                         <th></th>
                     </tr>
