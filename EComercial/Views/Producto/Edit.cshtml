@@ -4,9 +4,16 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Editar</h2>
 
-@using (Html.BeginForm()) {
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Edición de Productos</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img src="~/Images/e.png" width="80" height="80" />
+            @using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -70,16 +77,24 @@
             @Html.EditorFor(model => model.PrecioVenta)
             @Html.ValidationMessageFor(model => model.PrecioVenta)
         </div>
-
+        <br/>
         <p>
             <input type="submit" class="btn-primary" value="Guardar" />
         </p>
+
+
+        <div>
+            @Html.ActionLink("Volver al listado", "Index")
+        </div>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Volver al listado", "Index")
+
+        </div>
+    </div>
 </div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

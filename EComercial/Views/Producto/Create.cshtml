@@ -4,84 +4,128 @@
     ViewBag.Title = "Crear";
 }
 
-<h2>Crear</h2>
+<br/>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Producto</legend>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Nuevo Producto</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nombre)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Nombre)
-            @Html.ValidationMessageFor(model => model.Nombre)
-        </div>
+                <fieldset>
+                    <legend>Producto</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PrecioCompra)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PrecioCompra)
-            @Html.ValidationMessageFor(model => model.PrecioCompra)
-        </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Nombre)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Nombre)
+                        @Html.ValidationMessageFor(model => model.Nombre)
+                    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Cantidad)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Cantidad)
-            @Html.ValidationMessageFor(model => model.Cantidad)
-        </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PrecioCompra)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.PrecioCompra)
+                        @Html.ValidationMessageFor(model => model.PrecioCompra)
+                    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FechaActualizacion)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FechaActualizacion)
-            @Html.ValidationMessageFor(model => model.FechaActualizacion)
-        </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Cantidad)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Cantidad)
+                        @Html.ValidationMessageFor(model => model.Cantidad)
+                    </div>
+                    <br/>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.FechaActualizacion)
+                    </div>
+                    <div class="container">
+                    <div class="row">
+                    <div class='col-sm-3'>
+                    <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ItemId, "Item")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("ItemId", String.Empty)
-            @Html.ValidationMessageFor(model => model.ItemId)
-        </div>
+                    @*<div class="editor-label">
+                    @Html.LabelFor(model => model.FechaActualizacion)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.FechaActualizacion)
+                    @Html.ValidationMessageFor(model => model.FechaActualizacion)
+                </div>*@
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NegocioId, "Negocio")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("NegocioId", String.Empty)
-            @Html.ValidationMessageFor(model => model.NegocioId)
-        </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ItemId, "Item")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("ItemId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.ItemId)
+                    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PrecioVenta)
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.NegocioId, "Negocio")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("NegocioId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.NegocioId)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PrecioVenta)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.PrecioVenta)
+                        @Html.ValidationMessageFor(model => model.PrecioVenta)
+                    </div>
+
+                    <p>
+                    </p>
+
+                    <p>
+                        <input type="submit" class="btn-primary" value="Crear" />
+                    </p>
+
+
+
+                </fieldset>
+            }
+
+            <div>
+                @Html.ActionLink("Volver al listado", "Index")
+            </div>
+
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.PrecioVenta)
-            @Html.ValidationMessageFor(model => model.PrecioVenta)
-        </div>
-
-        <p>
-        </p>
-
-        <p>
-            <input type="submit" class="btn-primary" value="Crear" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Volver al listado", "Index")
+    </div>
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
 }
+
+<div>
+    <script src="~/Content/bootstrap-3.1.1/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+</div>

@@ -4,51 +4,32 @@
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Eliminar</h2>
 
-<h3>¿Está seguro de que desea eliminar esto?</h3>
-<fieldset>
-    <legend>Comprador</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Clientes - ¿Está seguro de que desea eliminar esto?</h2>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Apellido)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Apellido)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Email)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Telefono)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Telefono)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Direccion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Direccion)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img src="~/Images/e.png" width="80" height="80" />
+            <div>    Nombre: @Html.DisplayFor(model => model.Nombre) </div>
+            <div>    Apellido: @Html.DisplayFor(model => model.Apellido)</div>
+            <div>    E-mail: @Html.DisplayFor(model => model.Email)</div>
+            <div>    Teléfono: @Html.DisplayFor(model => model.Telefono)</div>
+            <div>    Dirección: @Html.DisplayFor(model => model.Direccion)</div>
+            <br />
+            <div>
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     <p>
         <input type="submit" class="btn-primary" value="Eliminar" /> |
         @Html.ActionLink("Volver al listado", "Index")
     </p>
 }
+
+            </div>
+        </div>
+    </div>
+</div>
+

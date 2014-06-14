@@ -4,19 +4,21 @@
     ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
+<h2></h2>
 
-<fieldset>
-    <legend>Categoria</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Categorias</h2>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img src="~/Images/e.png" width="80" height="80" />
+            <div>    Nombre: @Html.DisplayFor(model => model.Nombre) </div>
+            <br />
+            <div>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.CategoriaId }) |
+                @Html.ActionLink("Volver al listado", "Index")
+            </div>
+        </div>
     </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id=Model.CategoriaId }) |
-    @Html.ActionLink("Volver al listado", "Index")
-</p>
+</div>

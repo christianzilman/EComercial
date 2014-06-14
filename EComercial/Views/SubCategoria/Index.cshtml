@@ -4,36 +4,48 @@
     ViewBag.Title = "SubCateogias";
 }
 
-<h2>SubCategoria</h2>
+<h2>Sub Categorias</h2>
 
-<p>
-    @Html.ActionLink("Crear Nuevo", "Create")
-</p>
-<table class = "table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria.Nombre)
-        </th>
-        <th></th>
-    </tr>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">@Html.ActionLink("Crear Nueva Sub Categoria", "Create")</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categoria.Nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.SubCategoriaId }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.SubCategoriaId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.SubCategoriaId })
-        </td>
-    </tr>
-}
+            <table class="table">
+                <tr class="info">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Categoria.Nombre)
+                    </th>
+                    <th></th>
+                </tr>
 
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.SubCategoriaId }) |
+                            @Html.ActionLink("Detalles", "Details", new { id = item.SubCategoriaId }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.SubCategoriaId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+

@@ -248,8 +248,11 @@
     <Content Include="Content\bootstrap-3.1.1\css\bootstrap.css" />
     <Content Include="Content\bootstrap-3.1.1\css\bootstrap.min.css" />
     <Content Include="Content\bootstrap-3.1.1\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.1.1\js\bootstrap-datetimepicker.js" />
     <Content Include="Content\bootstrap-3.1.1\js\bootstrap.js" />
     <Content Include="Content\bootstrap-3.1.1\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-3.1.1\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\bootstrap-3.1.1\js\moment.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -312,6 +315,10 @@
     <Content Include="Content\bootstrap-3.1.1\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap-3.1.1\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\changomas.png" />
+    <Content Include="Images\e.png" />
+    <Content Include="Images\vea.png" />
+    <Content Include="Images\WalMart.png" />
     <Content Include="QR\Gma.QrCodeNet.Encoding.dll" />
     <Content Include="QR\MessagingToolkit.QRCode.dll" />
     <Content Include="QR\ThoughtWorks.QRCode.dll" />
@@ -422,9 +429,13 @@
     <Content Include="Views\Carro\Carro.cshtml" />
     <Content Include="Views\Categoria\Menu.cshtml" />
     <Content Include="Views\Home\QR.cshtml" />
+    <Content Include="Views\Shared\_CategoriaParcial.cshtml" />
+    <Content Include="Views\Home\SubCategoriasVistas.cshtml" />
+    <Content Include="Views\Home\ListadoProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\QR\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

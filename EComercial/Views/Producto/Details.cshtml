@@ -4,61 +4,25 @@
     ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
+<h2></h2>
 
-<fieldset>
-    <legend>Producto</legend>
+<div class="panel panel-primary">
+<div class="panel-heading">
+    <h2 class="panel-title">Producos</h2>
+</div>
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img src="~/Images/e.png" width="80" height="80" />
+            <div>    Descripcion: @Html.DisplayFor(model => model.Nombre) </div>
+            <div>    Precio: @Html.DisplayFor(model => model.PrecioVenta)</div>
+            <div>    Negocio: @Html.DisplayFor(model => model.Negocio.Nombre)</div>
+            <div>    Stock: @Html.DisplayFor(model => model.Cantidad)</div>
+            <br />
+            <div>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ProductoId }) |
+                @Html.ActionLink("Volver al listado", "Index")
+            </div>
+        </div>
+    </div>
+</div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PrecioCompra)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PrecioCompra)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cantidad)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Cantidad)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.FechaActualizacion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FechaActualizacion)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Item.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Item.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Negocio.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Negocio.Nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PrecioVenta)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PrecioVenta)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id=Model.ProductoId }) |
-    @Html.ActionLink("Volver al listado", "Index")
-</p>

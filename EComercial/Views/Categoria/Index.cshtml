@@ -6,28 +6,40 @@
 
 <h2>Categorias</h2>
 
-<p>
-    @Html.ActionLink("Crear Nueva Categoria", "Create")
-</p>
-<table class = "table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th></th>
-    </tr>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">@Html.ActionLink("Crear Nueva Categoria", "Create")</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.CategoriaId }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.CategoriaId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.CategoriaId })
-        </td>
-    </tr>
-}
+            <table class="table">
+                <thead>
+                    <tr class="info">
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
 
-</table>
+                        </th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.CategoriaId }) |
+                            @Html.ActionLink("Detalles", "Details", new { id = item.CategoriaId }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.CategoriaId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+</div>

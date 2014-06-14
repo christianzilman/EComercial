@@ -93,13 +93,15 @@ namespace EComercial.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ItemId = new SelectList(db.Items, "ItemId", "Nombre", producto.ItemId);
-            ViewBag.NegocioId = new SelectList(db.Negocios, "NegocioId", "Nombre", producto.NegocioId);
-            return View(producto);
+                ViewBag.ItemId = new SelectList(db.Items, "ItemId", "Nombre", producto.ItemId);
+                ViewBag.NegocioId = new SelectList(db.Negocios, "NegocioId", "Nombre", producto.NegocioId);
+                return View(producto);
         }
 
         //
         // GET: /Producto/Delete/5
+
+
 
         public ActionResult Delete(int id = 0)
         {

@@ -4,9 +4,15 @@
     ViewBag.Title = "Crear";
 }
 
-<h2>Crear</h2>
 
-@using (Html.BeginForm()) {
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Clientes</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-3">
+            @using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -63,6 +69,10 @@
 <div>
     @Html.ActionLink("Volver al listado", "Index")
 </div>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

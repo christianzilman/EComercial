@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EComercial.Models.Producto>
+
+@{
+    ViewBag.Title = "Listado Productos";
+}
+
+<h2>Listado Productos</h2>
+
+    @foreach (var item in Model)
+    {
+
+    <div class="col-md-3" >
+        <img src="~/Images/e.png" width="80" height="80" />
+        <div>Descripcion:@Html.DisplayFor(modelItem => item.Nombre) </div>
+        <div>    Precio:@Html.DisplayFor(modelItem => item.PrecioVenta)</div>
+        <a href="@Url.Content("~/Producto/Details/")@item.ProductoId"> Ver Producto</a>
+
+            
+            
+         
+    </div>
+    
+        
+    }

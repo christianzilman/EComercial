@@ -4,54 +4,68 @@
     ViewBag.Title = "Clientes";
 }
 
-<h2>Comprador</h2>
+<h2>Clientes</h2>
 
-<p>
-    @Html.ActionLink("Crear Nuevo", "Create")
-</p>
-<table class = "table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.CompradorId }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.CompradorId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.CompradorId })
-        </td>
-    </tr>
-}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">@Html.ActionLink("Crear Nuevo Cliente", "Create")</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
+            
+            <table class="table">
+                <tr class="info">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </th>
+                    <th></th>
+                </tr>
 
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Direccion)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.CompradorId }) |
+                            @Html.ActionLink("Detalles", "Details", new { id = item.CompradorId }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.CompradorId })
+                        </td>
+                    </tr>
+                }
+
+            </table>         
+
+            
+
+        </div>
+    </div>
+</div>
+
+

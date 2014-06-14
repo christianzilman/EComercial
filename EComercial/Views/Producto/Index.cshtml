@@ -6,64 +6,75 @@
 
 <h2>Producto</h2>
 
-<p>
-    @Html.ActionLink("Crear Nuevo", "Create")
-</p>
-<table class = "table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrecioCompra)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cantidad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaActualizacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Item.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Negocio.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrecioVenta)
-        </th>
-        <th></th>
-    </tr>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">@Html.ActionLink("Crear Nuevo Producto", "Create")</h2>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr class="info">
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PrecioCompra)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cantidad)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaActualizacion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Item.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Negocio.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PrecioVenta)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrecioCompra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cantidad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaActualizacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Negocio.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrecioVenta)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.ProductoId }) |
+                                @Html.ActionLink("Detalles", "Details", new { id = item.ProductoId }) |
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.ProductoId })
+                            </td>
+                        </tr>
+                    }
+                <tbody>
+            </table>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrecioCompra)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaActualizacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Negocio.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrecioVenta)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.ProductoId }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.ProductoId }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.ProductoId })
-        </td>
-    </tr>
-}
 
-</table>
+        </div>
+    </div>
+</div>

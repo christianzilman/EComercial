@@ -4,47 +4,27 @@
     ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
 
-<fieldset>
-    <legend>Comprador</legend>
+<h2></h2>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Clientes</h2>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
+    <div class="panel-body">
+        <div class="col-md-3">
+            <img src="~/Images/e.png" width="80" height="80" />
+            <div>    Nombre: @Html.DisplayFor(model => model.Nombre) </div>
+            <div>    Apellido: @Html.DisplayFor(model => model.Apellido)</div>
+            <div>    E-mail: @Html.DisplayFor(model => model.Email)</div>
+            <div>    Teléfono: @Html.DisplayFor(model => model.Telefono)</div>
+            <div>    Dirección: @Html.DisplayFor(model => model.Direccion)</div>
+            <br />
+            <div>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.CompradorId }) |
+                @Html.ActionLink("Volver al listado", "Index")
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Apellido)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Apellido)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Email)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Telefono)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Telefono)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Direccion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Direccion)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id=Model.CompradorId }) |
-    @Html.ActionLink("Volver al listado", "Index")
-</p>

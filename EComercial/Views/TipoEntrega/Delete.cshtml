@@ -4,23 +4,23 @@
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Eliminar</h2>
-
-<h3>¿Está seguro de que desea eliminar esto?</h3>
-<fieldset>
-    <legend>TipoEntrega</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h2 class="panel-title">Tipos de Entrega - ¿Está seguro de que desea eliminar esto?</h2>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
+    <div class="panel-body">
+        <div class="col-md-3">
+            <div>    Nombre: @Html.DisplayFor(model => model.Nombre) </div>
+            <br />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p>
+                    <input type="submit" class="btn-danger" value="Eliminar" />|
+                    @Html.ActionLink("Volver al listado", "Index")
+                </p>
+            }
+        </div>
     </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Eliminar" /> |
-        @Html.ActionLink("Volver al listado", "Index")
-    </p>
-}
+</div>
+

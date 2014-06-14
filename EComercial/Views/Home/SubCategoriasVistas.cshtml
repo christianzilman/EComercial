@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EComercial.Models.Categoria>
+@{
+    ViewBag.Title = "SubCategoriasVistas";
+}
+
+<div class="col-md-6">
+    @foreach (var categoria in Model)
+    {
+        <div>
+            @foreach (var subCategoria in categoria.SubCategorias)
+            {
+            <div class="col-md-6">
+                <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+                    <li class="active"><a href="#">@subCategoria.Nombre</a></li>
+                    @foreach (var item in subCategoria.Items)
+                    {
+                        @Html.ActionLink(item.Nombre, "ListadoProductos", new { id = item.ItemId })
+
+                    }
+                </ul>
+            </div>
+            }
+       </div> 
+    }  
+  </div>   
+  <div class="col-md-6">
+        @{IList<EComercial.Models.Producto> produts = ViewBag.Products;}
+        @foreach(var product in produts)
+        {
+            <div class="col-md-4" >
+                <img src="~/Images/e.png" width="80" height="80" />
+                <div>Descripcion:@Html.DisplayFor(modelItem => product.Nombre) </div>
+                <div>    Precio:@Html.DisplayFor(modelItem => product.PrecioVenta)</div>
+                <div> <a href="@Url.Content("~/Producto/Details/")@product.ProductoId"> Ver Producto</a> ||
+                    <a href="@Url.Content("~/Carro/Add/")@product.ProductoId">Agregar</a>
+                    
+                 </div>
+            </div>
+        }
+  </div>
+
+
+
+
+
