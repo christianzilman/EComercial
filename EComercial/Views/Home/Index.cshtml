@@ -3,51 +3,68 @@
 @{
     ViewBag.Title = "E-Comercial";
 }
+<table class="table">
+    <tr>
+        <td>
 
-<div class="row" >
-    <div class="col-md-4" >
-        <ul class="nav nav-pills nav-stacked" style="max-width: 250px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-pills nav-stacked" style="max-width: 250px;">
 
-            @foreach (var item in Model)
-            {
-                <li class="active">
-                    @Html.ActionLink(item.Nombre, "SubCategoriasVistas", new { id = item.CategoriaId })
-                    @*<a href="/Home/SubCategoriasVistas?id=@item.CategoriaId">@Html.DisplayFor(modelItem => item.Nombre)</a>*@
-                </li>
-            }
-        </ul>
-    </div>
-
-
-    <div class="col-md-8">
-        @{IList<EComercial.Models.Producto> products = ViewBag.Products;}
-
-        @foreach (var product in products)
-        {
-            <div class="col-md-3">
-                <img src="~/Images/e.png" width="80" height="80" />
-                <div>Descripcion:@Html.DisplayFor(modelItem => product.Nombre) </div>
-                <div>    Precio:@Html.DisplayFor(modelItem => product.PrecioVenta)</div>
-                <div>
-                    <a href="@Url.Content("~/Producto/Details/")@product.ProductoId"> Ver Producto</a> ||
-                    <a href="@Url.Content("~/Carro/Add/")@product.ProductoId">Agregar</a>
-
+                        @foreach (var item in Model)
+                        {
+                            <li class="active">
+                                @Html.ActionLink(item.Nombre, "SubCategoriasVistas", new { id = item.CategoriaId })
+                                @*<a href="/Home/SubCategoriasVistas?id=@item.CategoriaId">@Html.DisplayFor(modelItem => item.Nombre)</a>*@
+                            </li>
+                        }
+                    </ul>
                 </div>
+
+
             </div>
-        }
+
+        </td>
+
+<td>@using (Html.BeginForm())
+{
+    <div>
+        Buscar productos: @Html.TextBox("SearchString")
+        <input type="submit" class="btn-primary" value="Buscar!" />
     </div>
+    <br/>
+}
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">Productos Destacados</h2>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                @{IList<EComercial.Models.Producto> products = ViewBag.Products;}
 
-
-   
-<br/>
-<br />
-<br />
-<br />
-<br />
-<br /><br />
-<br />
-<br />
-<div id="myCarousel" class="carousel slide">
+                @foreach (var product in products)
+                {
+                    <div class="col-md-3">
+                        <img src="~/Images/e.png" width="80" height="80" />
+                        <div>@Html.DisplayFor(modelItem => product.Nombre) </div>
+                        <div>$@Html.DisplayFor(modelItem => product.PrecioVenta)</div>
+                        <div>
+                            <a href="@Url.Content("~/Producto/Details/")@product.ProductoId"> Ver Producto</a> -
+                            @*<a href="@Url.Content("~/Carro/Add/")@product.ProductoId">Agregar</a>*@
+                            @*<a href="@Url.Content("~/Carro/VerCarrito/")" class="glyphicon glyphicon-shopping-cart"> </a>*@
+                            <a href="@Url.Content("~/Carro/Add/")@product.ProductoId"><img src="~/Images/carrito (1).png" style="width: 28px; height: 28px;" /></a>
+                        </div>
+                    </div>
+                }
+            </div>
+            </div>
+        </div>
+    
+            
+</td>
+</tr>
+    <tr>
+        <td><div id="myCarousel" class="carousel slide">
     <!-- Carousel indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -57,37 +74,50 @@
     <!-- Carousel items -->
     <div class="carousel-inner">
         <div class="item active">
-            
-            <img src="~/Images/vea.png" class="center-block"  width="200" height="200" alt="First slide">
+
+            <img src="~/Images/vea.png" class="center-block" width="100" height="100" alt="First slide">
             <br />
             <br />
             <div class="carousel-caption"></div>
         </div>
         <div class="item">
-            <img src="~/Images/WalMart.png" class="center-block" width="200" height="200" alt="Second slide">
+            <img src="~/Images/WalMart.png" class="center-block" width="100" height="100" alt="Second slide">
             <br />
             <br />
             <div class="carousel-caption"></div>
         </div>
         <div class="item">
-            <img src="~/Images/changomas.png" class="center-block" width="200" height="200" alt="Second slide">
+            <img src="~/Images/changomas.png" class="center-block" width="100" height="100" alt="Second slide">
             <br />
             <br />
             <div class="carousel-caption"></div>
         </div>
     </div>
     <!-- Carousel nav -->
-    <br/>
-    <a class="carousel-control left" href="#myCarousel"
+    <br />
+    @*<a class="carousel-control left" href="#myCarousel"
        data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#myCarousel"
-       data-slide="next">&rsaquo;</a>
-</div> 
+       data-slide="next">&rsaquo;</a>*@
+</div>
+
 <script type="text/javascript">
 
     $(document).ready(function () {
         $('#myCarousel').carousel({
-            interval: 20
+            interval: 2
         })
     });
-    </script>
+</script></td>
+        <td><div style="text-align:center"> <a href="@Url.Content("~/Producto")"><img src="~/Images/ofertas (1).png" style="width: 900px; height: 170px;" /></a>  </div></td>
+    </tr>
+</table>
+<br/>
+<br />
+
+
+<br />
+<br />
+<br /><br />
+<br />
+<br />

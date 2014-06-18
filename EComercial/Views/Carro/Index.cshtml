@@ -13,7 +13,8 @@
                 <img src="~/Images/heroAccent.png" />
                 Descripcion:@Html.DisplayFor(modelItem => item.Nombre)                
                 Precio:@Html.DisplayFor(modelItem => item.PrecioVenta)
-                @Html.ActionLink("Agregar", "Add", new { id = item.ProductoId }) 
+                <div > @Html.ActionLink("Agregar", "Add", new { id = item.ProductoId })>  </div>
+                
             </div>
             
         }

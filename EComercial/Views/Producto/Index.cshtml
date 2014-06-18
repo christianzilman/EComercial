@@ -3,12 +3,11 @@
 @{
     ViewBag.Title = "Productos";
 }
-
-<h2>Producto</h2>
+<br/>
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h2 class="panel-title">@Html.ActionLink("Crear Nuevo Producto", "Create")</h2>
+        <h2 class="panel-title">Productos@*@Html.ActionLink("Crear Nuevo Producto", "Create")*@</h2>
     </div>
     <div class="panel-body">
         <div class="col-md-12">
@@ -74,9 +73,9 @@
                                 @Html.DisplayFor(modelItem => item.PrecioVenta)
                             </td>
                             <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.ProductoId }) |
-                                @Html.ActionLink("Detalles", "Details", new { id = item.ProductoId }) |
-                                @Html.ActionLink("Eliminar", "Delete", new { id = item.ProductoId })
+                                @*@Html.ActionLink("Editar", "Edit", new { id = item.ProductoId }) |*@
+                                @Html.ActionLink("Ver", "Details", new { id = item.ProductoId }) 
+                                @*@Html.ActionLink("Eliminar", "Delete", new { id = item.ProductoId })*@
                             </td>
                         </tr>
                     }

@@ -11,16 +11,17 @@
     <h2 class="panel-title">Producos</h2>
 </div>
     <div class="panel-body">
-        <div class="col-md-3">
+        <div class="col-md-5">
             <img src="~/Images/e.png" width="80" height="80" />
-            <div>    Descripcion: @Html.DisplayFor(model => model.Nombre) </div>
-            <div>    Precio: @Html.DisplayFor(model => model.PrecioVenta)</div>
+            <div>    @Html.DisplayFor(model => model.Nombre) </div>
+            <div>    $ @Html.DisplayFor(model => model.PrecioVenta)</div>
             <div>    Negocio: @Html.DisplayFor(model => model.Negocio.Nombre)</div>
-            <div>    Stock: @Html.DisplayFor(model => model.Cantidad)</div>
+            <div>    Unidades Disponibles: @Html.DisplayFor(model => model.Cantidad)</div>
             <br />
             <div>
-                @Html.ActionLink("Editar", "Edit", new { id = Model.ProductoId }) |
-                @Html.ActionLink("Volver al listado", "Index")
+                @*@Html.ActionLink("Editar", "Edit", new { id = Model.ProductoId }) |*@
+                <div><a href="@Url.Content("~/Carro/Add/")@Html.DisplayFor(model => model.ProductoId)">Agregar al <img src="~/Images/carrito (1).png" style="width: 28px; height: 28px;" /></a></div>
+                <div>@Html.ActionLink("Volver ", "Index")</div>
             </div>
         </div>
     </div>

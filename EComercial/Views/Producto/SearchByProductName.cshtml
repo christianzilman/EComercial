@@ -1,0 +1,87 @@
+﻿@model IEnumerable<EComercial.Models.Producto>
+
+@{
+    
+    ViewBag.Title = "SearchByProductName";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Resultados
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                <div>
+                    Buscar productos: @Html.TextBox("SearchString")
+                    <input type="submit" class="btn-primary" value="Buscar!" />
+                </div>
+            }
+            <table class="table">
+                <thead>
+                    <tr class="info">
+                        <th>
+                            @Html.ActionLink("Descripción", "Index", new { sortOrder = ViewBag.NameSortParm })
+                            @*@Html.DisplayNameFor(model => model.Nombre)*@
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PrecioCompra)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cantidad)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FechaActualizacion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Item.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Negocio.Nombre)
+                        </th>
+                        <th>
+                            <b> @Html.ActionLink("Precio de Venta", "Index", new { sortOrder = ViewBag.PriceSortParm })</b>
+                            @*@Html.DisplayNameFor(model => model.PrecioVenta)*@
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrecioCompra)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cantidad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaActualizacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Negocio.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrecioVenta)
+                            </td>
+                            <td>
+                                @*<a href="@Url.Content("~/Producto/Details/")@product.ProductoId"> Ver Producto</a> ||
+                                <a href="@Url.Content("~/Carro/Add/")@product.ProductoId">Agregar</a>*@
+                            </td>
+                        </tr>
+                    }
+                <tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>

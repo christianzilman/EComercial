@@ -21,6 +21,14 @@ namespace EComercial.Controllers
             return View(productoes.ToList());            
         }
 
+
+        public ActionResult VerCarrito()
+        {
+            var carros = db.Carros.Include(p => p.Producto).Where(p => p.UserId == 1);
+            return View("VerCarrito", carros.ToList());
+           
+            //return View(productoes.ToList());   
+        }
         public ActionResult Add(int id = 0)
         {
 
@@ -59,7 +67,8 @@ namespace EComercial.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Update(FormCollection fc, List<int> ProductoId, List<int> Cantidad) 
         {
-
+            
+            ViewBag.Suma = 0;
             if (!(fc["update"] == null))
             {
                 for (int i = 0; i < ProductoId.Count; i++)
@@ -71,7 +80,7 @@ namespace EComercial.Controllers
                         && c.ProductoId == id);
                     carro.Cantidad = Cantidad[i];
                     carro.SubTotal = carro.Precio * carro.Cantidad;
-
+                    ViewBag.Suma = ViewBag.Suma + Convert.ToDouble(carro.SubTotal);
                     db.SaveChanges();
                 }
                 var carros = db.Carros.Include(p => p.Producto).Where(p => p.UserId == 1);

@@ -50,6 +50,34 @@ namespace EComercial.Controllers
             return View();
         }
 
+        public ActionResult SearchProductByName(string sortOrder, string searchString)
+        {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "price_desc" : "";
+            var productoes = db.Productoes.Include(p => p.Item).Include(p => p.Negocio);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                productoes = productoes.Where(p => p.Nombre.ToUpper().Contains(searchString.ToUpper()));
+                //students = students.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())
+                //                       || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    productoes = productoes.OrderByDescending(p => p.Nombre);
+                    break;
+                case "price_desc":
+                    productoes = productoes.OrderByDescending(p => p.PrecioVenta);
+                    break;
+                default:
+                    productoes = productoes.OrderBy(p => p.Nombre);
+                    break;
+            }
+            return View(productoes.ToList());
+        }
+
         public ActionResult SubCategoriasVistas(int id = 0)
         {
             
@@ -59,7 +87,7 @@ namespace EComercial.Controllers
                     Include(p => p.Item.SubCategoria.Categoria).
                     Where(p=>p.Item.SubCategoria.CategoriaId== id).ToList();
             ViewBag.Products = products;
-           //db.SubCategorias.Include(p => p. ).Find(SubCategoriaId)
+            //db.SubCategorias.Include(p=>p.).Find(SubCategoriaId)
             return View(categoria);
         }
 

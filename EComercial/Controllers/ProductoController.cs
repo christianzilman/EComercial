@@ -46,6 +46,8 @@ namespace EComercial.Controllers
         }
 
 
+      
+
         //
         // GET: /Producto/Details/5
 
