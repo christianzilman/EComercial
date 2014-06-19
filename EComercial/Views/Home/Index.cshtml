@@ -6,11 +6,9 @@
 <table class="table">
     <tr>
         <td>
-
             <div class="row">
                 <div class="col-md-12">
                     <ul class="nav nav-pills nav-stacked" style="max-width: 250px;">
-
                         @foreach (var item in Model)
                         {
                             <li class="active">
@@ -26,14 +24,14 @@
 
         </td>
 
-<td>@using (Html.BeginForm())
-{
-    <div>
-        Buscar productos: @Html.TextBox("SearchString")
-        <input type="submit" class="btn-primary" value="Buscar!" />
-    </div>
-    <br/>
-}
+<td>@*@using (Html.BeginForm())
+    {
+        <div>
+            Buscar productos: @Html.TextBox("SearchString")
+            <input type="submit" class="btn-primary" value="Buscar!" />
+        </div>
+        <br/>
+    }*@
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h2 class="panel-title">Productos Destacados</h2>

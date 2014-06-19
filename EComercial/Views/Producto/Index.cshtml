@@ -13,7 +13,7 @@
         <div class="col-md-12">
             @using (Html.BeginForm())
             {
-                <div>
+                <div class="hidden">
                     Buscar productos: @Html.TextBox("SearchString")
                     <input type="submit" class="btn-primary" value="Buscar!" />
                 </div>
