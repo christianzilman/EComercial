@@ -12,7 +12,7 @@
 </div>
     <div class="panel-body">
         <div class="col-md-5">
-            <img src="~/Images/e.png" width="80" height="80" />
+            <img src="data:image;base64,@System.Convert.ToBase64String(Model.Imagen)" width="80" height="80" />   
             <div>    @Html.DisplayFor(model => model.Nombre) </div>
             <div>    $ @Html.DisplayFor(model => model.PrecioVenta)</div>
             <div>    Negocio: @Html.DisplayFor(model => model.Negocio.Nombre)</div>

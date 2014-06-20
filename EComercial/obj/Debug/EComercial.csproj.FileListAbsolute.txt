@@ -96,7 +96,6 @@ c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bi
 c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\ru\System.Spatial.resources.dll
 c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\zh-Hans\System.Spatial.resources.dll
 c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\zh-Hant\System.Spatial.resources.dll
-c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\obj\Debug\EComercial.csprojResolveAssemblyReference.cache
 c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\obj\Debug\EComercial.dll
 c:\users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\obj\Debug\EComercial.pdb
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\bin\EComercial.dll.config
@@ -206,3 +205,7 @@ C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EC
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\bin\MessagingToolkit.QRCode.dll
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\bin\ThoughtWorks.QRCode.dll
 C:\Users\Mauricio\Documents\Visual Studio 2013\Projects\EComercial\EComercial\EComercial\obj\Debug\EComercial.csprojResolveAssemblyReference.cache
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\PagedList.dll
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\PagedList.Mvc.dll
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\PagedList.xml
+C:\Users\cjzilman\documents\visual studio 2013\Projects\EComercial\EComercial\bin\PagedList.Mvc.xml

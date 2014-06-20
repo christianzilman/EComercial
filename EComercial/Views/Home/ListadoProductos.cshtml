@@ -15,14 +15,10 @@
             {
 
                 <div class="col-md-3">
-                    <img src="~/Images/e.png" width="80" height="80" />
+                    <img src="data:image;base64,@System.Convert.ToBase64String(item.Imagen)" width="80" height="80" />   
                     <div>Descripcion:@Html.DisplayFor(modelItem => item.Nombre) </div>
                     <div>    Precio:@Html.DisplayFor(modelItem => item.PrecioVenta)</div>
                     <a href="@Url.Content("~/Producto/Details/")@item.ProductoId"> Ver Producto</a>
-
-
-
-
                 </div>
 
 

@@ -17,8 +17,9 @@ namespace EComercial.Models
         public Nullable<double> PrecioCompra { get; set; }
         public Nullable<int> Cantidad { get; set; }
         public Nullable<System.DateTime> FechaActualizacion { get; set; }
-        //public byte[] Imagen { get; set; }
-        public string Imagen { get; set; }
+        
+        public byte[] Imagen { get; set; }
+        //public string Imagen { get; set; }
         public int ItemId { get; set; }
         public Nullable<int> NegocioId { get; set; }
         public Nullable<double> PrecioVenta { get; set; }

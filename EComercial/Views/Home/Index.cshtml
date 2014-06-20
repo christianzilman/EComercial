@@ -43,7 +43,7 @@
                 @foreach (var product in products)
                 {
                     <div class="col-md-3">
-                        <img src="~/Images/e.png" width="80" height="80" />
+                        <img src="data:image;base64,@System.Convert.ToBase64String(product.Imagen)" width="80" height="80" />   
                         <div>@Html.DisplayFor(modelItem => product.Nombre) </div>
                         <div>$@Html.DisplayFor(modelItem => product.PrecioVenta)</div>
                         <div>

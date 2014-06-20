@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EComercial.Models;
-using PagedList;
+//using PagedList;
 
 namespace EComercial.Controllers
 {
